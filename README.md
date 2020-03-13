@@ -8,9 +8,9 @@
 
 ## Features
 
-A Python Script to:
+A Python function to:
 
-* Change MySQL Root Password - for a list of hosts i.e `root@localhost`
+* Change MySQL Root Password - for a list of hosts i.e `localhost`, `127.0.0.1`, `::1`, .etc.
 * Remove Anonymous User
 * Disallow Root Login Remotely
 * Remove Test Database
@@ -68,21 +68,19 @@ python mysql.py
 
 
 
-* `login_password` Root password to login to `MySQL`
-* `new_password` New desired Root password
-* `hosts` List of hosts for the provided user i.e ['localhost', '127.0.0.1', '::1'] 
-  * `Note:` all will have the same new password
-  * **Default:** `['hostname'] `
-* `change_root_password`
-  * **Default:** `True`
-* `remove_anonymous_user`
-  * **Default:** `True`
-* `disallow_root_login_remotely`
-  * **Default:** `False`
-* `remove_test_db`
-  * **Default:** `True`
 
 
+| :Param                         | :Description                                                 | :Default      | :Type   |
+| ------------------------------ | ------------------------------------------------------------ | ------------- | ------- |
+| `login_password`               | Root's password to login to MySQL                            |               | String  |
+| `new_password`                 | New desired Root password                                    |               | String  |
+| `user`                         | MySQL user                                                   | root          | String  |
+| `login_host`                   | host to connect to                                           | localhost     | String  |
+| `hosts`                        | List of hosts for the provided user i.e `['localhost', '127.0.0.1', '::1']`, `Note:` all will have the same new password | [‘localhost’] | List    |
+| `change_root_password`         |                                                              | True          | Boolean |
+| `remove_anonymous_user`        |                                                              | True          | Boolean |
+| `disallow_root_login_remotely` |                                                              | False         | Boolean |
+| `remove_test_db`               |                                                              | True          | Boolean |
 
 
 
@@ -104,5 +102,5 @@ python mysql.py
 
 Thank you 
 
-Eslam Gomaa
+[Eslam Gomaa](https://www.linkedin.com/in/eslam-sa3dany/)
 
