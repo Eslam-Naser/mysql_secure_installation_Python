@@ -1,17 +1,34 @@
 import MySQLdb as mysql
 
+
 def check_mysql_connection(host, user, password=''):
+    """
+    A function used to check the ability to login to MySQL/Mariadb
+    :param host: ie. 'localhost'  - :type String
+    :param user: mysql user ie. 'root' - :type String
+    :param password: mysql user's password - :type String
+    :return: True||False
+    """
     try:
         mysql.connect(host=host, user=user, passwd=password)
         return True
     except  mysql.Error:
         return False
 
-
-def search_tuple(tups, elem):
-    return filter(lambda tup: elem in tup, tups)
-
 def mysql_secure_installation(login_password, new_password, user='root',login_host='localhost', hosts=['hostname'], change_root_password= True, remove_anonymous_user= True, disallow_root_login_remotely= False, remove_test_db= True):
+    """
+    A function to perform the steps of mysql_secure_installation script
+    :param login_password: Root's password to login to MySQL
+    :param new_password: New desired Root password :type String
+    :param user: MySQL user - default: 'root' :type String
+    :param login_host: host to connect to - default: 'localhost' :type String
+    :param hosts: List of hosts for the provided user i.e ['localhost', '127.0.0.1', '::1'] :type List
+    :param change_root_password:  default: True - :type Boolean
+    :param remove_anonymous_user: default: True - :type: Boolean
+    :param disallow_root_login_remotely: default: False - :type Boolean
+    :param remove_test_db: default: True - :type: Boolean
+    :return:
+    """
     if isinstance(hosts, str):
         hosts = hosts.split(',')
     info = {'change_root_pwd': None, 'hosts_failed': [], 'hosts_success': [],'remove_anonymous_user': None, 'remove_test_db': None, 'disallow_root_remotely': None }
@@ -33,6 +50,8 @@ def mysql_secure_installation(login_password, new_password, user='root',login_ho
                 info['remove_anonymous_user'] = 0
 
     def remove_testdb(cursor):
+        def search_tuple(tups, elem):
+            return filter(lambda tup: elem in tup, tups)
         if remove_test_db:
             cursor.execute("show databases;")
             testdb = cursor.fetchall()
@@ -121,11 +140,5 @@ def mysql_secure_installation(login_password, new_password, user='root',login_ho
 
 # Example of Usage
 
-print(mysql_secure_installation(login_password='password51', new_password='password52', hosts=['localhost', '::1', '127.0.0.1', 'controller.linux.com', 'controller', 'test']))
-
-
-
-
-
-
+#print(mysql_secure_installation(login_password='password51', new_password='password52', hosts=['localhost', '::1', '127.0.0.1', 'controller.linux.com', 'controller', 'test']))
 

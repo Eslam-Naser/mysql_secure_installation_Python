@@ -37,7 +37,7 @@ A Python Script to:
 * use the function `mysql_secure_installation`
 
 ```python
-mysql_secure_installation(login_password='password511',
+mysql_secure_installation(login_password='',
                           new_password='password51',
                           hosts=['localhost',
                                  '::1',
@@ -70,7 +70,8 @@ python mysql.py
 
 * `login_password` Root password to login to `MySQL`
 * `new_password` New desired Root password
-* `hosts` A **List** of hosts to change password for, `Note:` all will have the same new password
+* `hosts` List of hosts for the provided user i.e ['localhost', '127.0.0.1', '::1'] 
+  * `Note:` all will have the same new password
   * **Default:** `['hostname'] `
 * `change_root_password`
   * **Default:** `True`
