@@ -34,6 +34,12 @@ A Python function to:
 
 
 
+```bash
+yum insatll MySQL-python
+```
+
+
+
 * use the function `mysql_secure_installation`
 
 ```python
@@ -88,11 +94,13 @@ python mysql.py
 
 * `0` –> `Success`
 
+  * When repeat –> `meet the desired state`
+
 * `1` –>  `Fail`
 
   * For `change_root_pwd` - will output `1` if failed to change the password of at least 1 host, for more info check `hosts_success` & `hosts_failed`
 
-    
+  
 
 
 

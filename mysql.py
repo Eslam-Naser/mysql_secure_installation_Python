@@ -55,14 +55,14 @@ def mysql_secure_installation(login_password, new_password, user='root',login_ho
         if remove_test_db:
             cursor.execute("show databases;")
             testdb = cursor.fetchall()
-            if not search_tuple(testdb, 'testdb'):
-                cursor.execute("drop database testdb;")
+            if not search_tuple(testdb, 'test'):
+                cursor.execute("drop database test;")
                 info['remove_test_db'] = 0
             else:
                 info['remove_test_db'] = 0
 
-            if not search_tuple(testdb, 'testdb'):
-                cursor.execute("drop database testdb;")
+            if not search_tuple(testdb, 'test'):
+                cursor.execute("drop database test;")
                 info['remove_test_db'] = 0
             else:
                 info['remove_test_db'] = 0
@@ -71,8 +71,6 @@ def mysql_secure_installation(login_password, new_password, user='root',login_ho
         if disallow_root_login_remotely:
             cursor.execute("select user, host from mysql.user WHERE User='root' AND Host NOT IN ('localhost', '127.0.0.1', '::1');")
             remote = cursor.fetchall()
-            print(remote)
-            print(len(remote))
             if len(remote) >= 1:
                 cursor.execute("DELETE FROM mysql.user WHERE User='root' AND Host NOT IN ('localhost', '127.0.0.1', '::1');")
                 cursor.execute("flush privileges;")
@@ -138,7 +136,7 @@ def mysql_secure_installation(login_password, new_password, user='root',login_ho
     return info
 
 
-# Example of Usage
+### Example of Usage ###
 
-#print(mysql_secure_installation(login_password='password51', new_password='password52', hosts=['localhost', '::1', '127.0.0.1', 'controller.linux.com', 'controller', 'test']))
+# print(mysql_secure_installation(disallow_root_login_remotely=True, login_password='', new_password='password', hosts=['localhost', '::1', '127.0.0.1', 'controller.linux.com', 'controller', 'test']))
 
