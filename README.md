@@ -34,8 +34,14 @@ A Python function to:
 
 
 
+* Install the `MySQL-python` Library
+
 ```bash
+# For Centos
 yum insatll MySQL-python
+
+# For Ubuntu
+apt install python3-mysqldb
 ```
 
 
