@@ -30,6 +30,38 @@ A Python Script to:
 
 
 
+* use the function `mysql_secure_installation`
+
+```bash
+mysql_secure_installation(login_password='password511',
+                          new_password='password51',
+                          hosts=['localhost',
+                                 '::1',
+                                 '127.0.0.1',
+                                 'controller.linux.com',
+                                 'controller',
+                                 'test'])
+```
+
+
+
+* Example Output
+
+```bash
+python mysql.py
+
+{'remove_anonymous_user': 0, 'hosts_success': ['127.0.0.1', 'localhost', '::1'], 'disallow_root_remotely': None, 'hosts_failed': ['test', 'controller', 'controller.linux.com'], 'remove_test_db': 0, 'change_root_pwd': 1}
+# 'disallow_root_remotely': None --> because it's "False" by default
+
+python mysql.py
+
+{'remove_anonymous_user': 0, 'stdout': 'Password of root@localhost Already meets the desired state', 'hosts_success': [], 'disallow_root_remotely': None, 'hosts_failed': [], 'remove_test_db': 0, 'change_root_pwd': 0}
+```
+
+
+
+---
+
 
 
 * `login_password` Root password to login to `MySQL`
@@ -47,36 +79,23 @@ A Python Script to:
 
 
 
-```python
-mysql_secure_installation(login_password='password511', new_password='password51', hosts=['localhost', '::1', '127.0.0.1', 'controller.linux.com', 'controller', 'test'])
-
-```
-
-```bash
-python mysql.py
-
-{'remove_anonymous_user': 0, 'hosts_success': ['127.0.0.1', 'localhost', '::1'], 'disallow_root_remotely': None, 'hosts_failed': ['test', 'controller', 'controller.linux.com'], 'remove_test_db': 0, 'change_root_pwd': 1}
-# 'disallow_root_remotely': None --> because it's "False" by default
-
-python mysql.py
-
-{'remove_anonymous_user': 0, 'stdout': 'Password of root@localhost Already meets the desired state', 'hosts_success': [], 'disallow_root_remotely': None, 'hosts_failed': [], 'remove_test_db': 0, 'change_root_pwd': 0}
-```
 
 
+### Output:
 
-> ### Output:
->
-> * `0` –> `Success`
->
-> * `1` –>  `Fail`
->   *  For `change_root_pwd` - will output `1` if failed to change the password for at least 1 host, for more info check `hosts_success` & `hosts_failed`
+* `0` –> `Success`
 
+* `1` –>  `Fail`
 
+  * For `change_root_pwd` - will output `1` if failed to change the password for at least 1 host, for more info check `hosts_success` & `hosts_failed`
 
-##### 
+    
 
 
 
 
+
+Thank you 
+
+Eslam Gomaa
 
