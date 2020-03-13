@@ -26,13 +26,17 @@ A Python Script to:
 
 
 
+---
+
+
+
 ## Usage
 
 
 
 * use the function `mysql_secure_installation`
 
-```bash
+```python
 mysql_secure_installation(login_password='password511',
                           new_password='password51',
                           hosts=['localhost',
@@ -87,11 +91,13 @@ python mysql.py
 
 * `1` –>  `Fail`
 
-  * For `change_root_pwd` - will output `1` if failed to change the password for at least 1 host, for more info check `hosts_success` & `hosts_failed`
+  * For `change_root_pwd` - will output `1` if failed to change the password of at least 1 host, for more info check `hosts_success` & `hosts_failed`
 
     
 
 
+
+---
 
 
 
