@@ -55,13 +55,7 @@ def mysql_secure_installation(login_password, new_password, user='root',login_ho
         if remove_test_db:
             cursor.execute("show databases;")
             testdb = cursor.fetchall()
-            if not search_tuple(testdb, 'test'):
-                cursor.execute("drop database test;")
-                info['remove_test_db'] = 0
-            else:
-                info['remove_test_db'] = 0
-
-            if not search_tuple(testdb, 'test'):
+            if search_tuple(testdb, 'test'):
                 cursor.execute("drop database test;")
                 info['remove_test_db'] = 0
             else:
