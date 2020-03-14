@@ -40,6 +40,7 @@ def mysql_secure_installation(login_password, new_password, user='root',login_ho
             if len(anon_user) >= 1:
                 cursor.execute('use mysql;')
                 cursor.execute("DELETE FROM user WHERE user='';")
+                cursor.execute("update mysql.user set plugin=null where user='root';")
                 cursor.execute("select user, host from mysql.user where user='';")
                 check = cursor.fetchall()
                 if len(check) >= 1:
