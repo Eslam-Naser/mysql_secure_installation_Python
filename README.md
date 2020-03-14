@@ -40,7 +40,13 @@ A Python function that provides the functions of `mysql_secure_installation`
 # For Centos
 yum insatll MySQL-python
 
-# For Ubuntu
+# ------ ------ ------
+
+# For ubuntu
+apt-get install -y python-dev libmysqlclient-dev
+pip install MySQL-python
+
+# OR
 apt install python3-mysqldb
 ```
 
