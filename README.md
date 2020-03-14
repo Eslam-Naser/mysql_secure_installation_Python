@@ -22,7 +22,7 @@ A Python function to:
 
 
 * Python & **Idempotent** :sunglasses:
-  * Means that when you run it again, will not re-execute the commands
+  * Means that when you run it again, will not re-execute the commands *If the requirements meet the desired state*
 
 
 
