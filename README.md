@@ -8,7 +8,7 @@
 
 ## Features
 
-A Python function to:
+A Python function that provides the functions of `mysql_secure_installation`
 
 * Change MySQL Root Password - for a list of hosts i.e `localhost`, `127.0.0.1`, `::1`, .etc.
 * Remove Anonymous User
@@ -22,7 +22,7 @@ A Python function to:
 
 
 * Python & **Idempotent** :sunglasses:
-  * Means that when you run it again, will not re-execute the commands *If the requirements meet the desired state*
+  * Means that when you run it again, will not re-execute the commands *If the desired state meets the current state*
 
 
 
