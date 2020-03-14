@@ -52,6 +52,10 @@ apt install python3-mysqldb
 
 
 
+---
+
+
+
 * use the function `mysql_secure_installation`
 
 ```python
