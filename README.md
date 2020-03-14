@@ -96,17 +96,16 @@ python mysql.py
 
 
 
-### Output:
+---
 
-* `0` –> `Success`
 
-  * When repeat –> `meet the desired state`
 
-* `1` –>  `Fail`
+## Output:
 
-  * For `change_root_pwd` - will output `1` if failed to change the password of at least 1 host, for more info check `hosts_success` & `hosts_failed`
-
-  
+| Code | Meaning   | Description                                                  |
+| ---- | --------- | ------------------------------------------------------------ |
+| 0    | `Success` | When repeat –> `meet the desired state`                      |
+| 1    | `Fail`    | **`change_root_pwd`** - will output `1` if failed to change the password of at least 1 host, for more info check `hosts_success` & `hosts_failed` |
 
 
 
