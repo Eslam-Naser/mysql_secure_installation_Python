@@ -112,6 +112,8 @@ python mysql.py
 
 
 
+## Input
+
 
 
 | :Param                         | :Description                                                 | :Default      | :Type   |
@@ -132,7 +134,7 @@ python mysql.py
 
 
 
-## Output:
+## Output
 
 | Code | Meaning   | Description                                                  |
 | ---- | --------- | ------------------------------------------------------------ |
