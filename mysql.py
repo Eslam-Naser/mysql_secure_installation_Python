@@ -134,4 +134,3 @@ def mysql_secure_installation(login_password, new_password, user='root',login_ho
 ### Example of Usage ###
 
 # print(mysql_secure_installation(disallow_root_login_remotely=True, login_password='', new_password='password', hosts=['localhost', '::1', '127.0.0.1', 'controller.linux.com', 'controller', 'test']))
-

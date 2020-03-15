@@ -56,11 +56,33 @@ apt install python3-mysqldb
 
 
 
-* use the function `mysql_secure_installation`
+#### use the function `mysql_secure_installation`
+
+
+
+* For a Fresh MySQL Installation
 
 ```python
 mysql_secure_installation(login_password='',
-                          new_password='password51',
+                          new_password='password22',
+                          login_host='localhost',
+                          hosts=['localhost',
+                                 '::1',
+                                 '127.0.0.1',
+                                 'controller.linux.com',
+                                 'controller'],
+                          disallow_root_login_remotely=True,
+                          remove_anonymous_user=True,
+                          remove_test_db=True)
+```
+
+
+
+* Change Root password
+
+```python
+mysql_secure_installation(login_password='password22',
+                          new_password='password55',
                           hosts=['localhost',
                                  '::1',
                                  '127.0.0.1',
@@ -125,5 +147,5 @@ python mysql.py
 
 Thank you 
 
-[Eslam Gomaa](https://www.linkedin.com/in/eslam-sa3dany/)
+[Eslam Gomaa](https://www.linkedin.com/in/eslam-gomaa/)
 
